@@ -35,7 +35,7 @@ const NewTodoCard = () => {
 
       <div className="grid grid-cols-1 gap-5 pb-4 md:grid-cols-2">
         {data?.todos.map((todo) => (
-          <Card>
+          <Card key={todo.id}>
             <CardHeader>
               <div className="flex items-center justify-between">
                 <CardTitle className="leading-tight line-clamp-1">
