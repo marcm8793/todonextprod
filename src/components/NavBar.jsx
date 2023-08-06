@@ -4,7 +4,7 @@ import LoginBtn from "@/components/LoginButton";
 import { ModeToggle } from "@/components/ModeToggle";
 import Image from "next/image";
 
-export default function NavBar() {
+export default function Navbar() {
   return (
     <div className="container flex justify-between items-center p-5">
       <div className="flex items-center">
