@@ -1,4 +1,4 @@
-import NaviBar from "@/components/Navbar";
+import NavBar from "@/components/NavBar";
 import MainPage from "@/components/MainPage";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
@@ -9,14 +9,14 @@ export default async function Home() {
   if (session) {
     return (
       <div>
-        <NaviBar />
+        <NavBar />
         <NewTodoCard />
       </div>
     );
   }
   return (
     <div>
-      <NaviBar />
+      <NavBar />
       <MainPage />
     </div>
   );
