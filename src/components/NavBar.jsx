@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import LoginBtn from "@/components/LoginBtn";
+import LoginBtn from "@/components/LoginButton";
 import { ModeToggle } from "@/components/ModeToggle";
 import Image from "next/image";
 
-function Nav() {
+function Navbar() {
   return (
     <div className="container flex justify-between items-center p-5">
       <div className="flex items-center">
@@ -19,4 +19,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default Navbar;

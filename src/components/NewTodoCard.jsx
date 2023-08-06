@@ -11,7 +11,7 @@ import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { Edit, Trash } from "lucide-react";
 import useSWR, { mutate } from "swr";
-import AddtaskBtn from "@/components/AddtaskBtn";
+import AddTodoBtn from "@/components/AddTodoBtn";
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
 
@@ -30,7 +30,7 @@ const NewTodoCard = () => {
   return (
     <div className="container items-center justify-center ">
       <div className="p-5 flex items-center justify-center ">
-        <AddtaskBtn />
+        <AddTodoBtn />
       </div>
 
       <div className="grid grid-cols-1 gap-5 pb-4 md:grid-cols-2">

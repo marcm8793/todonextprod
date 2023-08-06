@@ -3,7 +3,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-export default function LoginButton() {
+export default function LoginBtn() {
   const { data: session } = useSession();
   if (session) {
     return (
