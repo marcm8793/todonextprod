@@ -20,7 +20,7 @@ function FloatingLogo() {
             </Button>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Let's go</p>
+            <p>{`Let's go`}</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
