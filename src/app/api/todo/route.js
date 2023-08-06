@@ -43,7 +43,7 @@ export async function POST(req) {
 export async function DELETE(req) {
   const session = await getServerSession(authOptions);
   if (!session) {
-    return NextResponse.json("Não autorizado");
+    return NextResponse.json("Not authorized");
   }
   const { searchParams } = new URL(req.url);
   const id = searchParams.get("id");
