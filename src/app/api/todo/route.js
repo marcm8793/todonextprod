@@ -62,14 +62,34 @@ export async function PATCH(req) {
     return NextResponse.json("Not authorized");
   }
   const data = await req.json();
+  const { searchParams } = new URL(req.url);
+  const id = searchParams.get("id");
   const updateTodo = await prisma.todo.update({
     where: {
-      id: data.id,
+      id: id,
     },
     data: {
       title: data.title,
-      completed: data.completed,
-      updatedAt: new Date(),
+      description: data.description,
+    },
+  });
+  return NextResponse.json({ message: "Successfully updated", updateTodo });
+}
+
+//! 5. PUT a todo
+export async function PUT(req) {
+  const session = await getServerSession(authOptions);
+  if (!session) {
+    return NextResponse.json("Not authorized");
+  }
+  const { title, description, id } = await req.json();
+  const updateTodo = await prisma.todo.update({
+    where: {
+      id: id,
+    },
+    data: {
+      title,
+      description,
     },
   });
   return NextResponse.json({ message: "Successfully updated", updateTodo });

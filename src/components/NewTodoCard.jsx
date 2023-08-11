@@ -1,5 +1,5 @@
 "use client";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -8,17 +8,16 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Switch } from "@/components/ui/switch";
 import { Edit, Trash } from "lucide-react";
 import useSWR, { mutate } from "swr";
-import AddTodoBtn from "@/components/AddTodoBtn";
+import AddtodoBtn from "@/components/AddtodoBtn";
+import React from "react";
+import Link from "next/link";
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
 
-import React from "react";
-
 const NewTodoCard = () => {
-  const { data, error } = useSWR("/api/todo", fetcher);
+  const { data } = useSWR("/api/todo", fetcher);
 
   const deleteTodo = async (id) => {
     await fetch(`/api/todo?id=${id}`, {
@@ -30,7 +29,7 @@ const NewTodoCard = () => {
   return (
     <div className="container items-center justify-center ">
       <div className="p-5 flex items-center justify-center ">
-        <AddTodoBtn />
+        <AddtodoBtn />
       </div>
 
       <div className="grid grid-cols-1 gap-5 pb-4 md:grid-cols-2">
@@ -42,9 +41,16 @@ const NewTodoCard = () => {
                   {todo.title}
                 </CardTitle>
                 <div className="flex items-center gap-1">
-                  <Button variant="ghost" onClick={() => deleteTodo(todo.id)}>
-                    <Trash size={16} color="red" />
-                  </Button>
+                  <Link href={`/Editodo/${todo.id}`}>
+                    <Button variant="ghost">
+                      <Edit size={16} />
+                    </Button>
+                  </Link>
+                  <div className="flex items-center gap-1">
+                    <Button variant="ghost" onClick={() => deleteTodo(todo.id)}>
+                      <Trash size={16} color="red" />
+                    </Button>
+                  </div>
                 </div>
               </div>
             </CardHeader>

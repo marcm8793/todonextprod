@@ -7,4 +7,5 @@ NextJS
 Prisma DB  
 DB Supabase  
 Styled with shadcn  
+React Icons  
 :checkered_flag::checkered_flag:
