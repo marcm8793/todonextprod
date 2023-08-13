@@ -13,6 +13,10 @@ const Page = ({ params }) => {
   const [description, setDescription] = useState("");
   const router = useRouter();
 
+  useEffect(() => {
+    getData();
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -49,10 +53,6 @@ const Page = ({ params }) => {
     setTitle(json.todo.title);
     setDescription(json.todo.description);
   };
-
-  useEffect(() => {
-    getData();
-  }, []);
 
   const cancelBtn = () => {
     router.push("/");
