@@ -15,7 +15,7 @@ const Page = ({ params }) => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [id]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
