@@ -1,5 +1,5 @@
 import React from "react";
-import LoginBtn from "@/components/LoginBtn";
+import LoginBtn from "@/components/LoginButton";
 import { ModeToggle } from "@/components/ModeToggle";
 import { FcTodoList } from "react-icons/fc";
 import Link from "next/link";
