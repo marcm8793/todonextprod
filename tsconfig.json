@@ -29,7 +29,8 @@
     "**/*.tsx",
     "src/components/ui/button.jsx",
     "src/lib/provider.js",
-    "src/components/ui/avatar.jsx"
+    "src/components/ui/avatar.jsx",
+    "src/app/api/user/[id]/route.js"
   ],
   "exclude": ["node_modules"]
 }
