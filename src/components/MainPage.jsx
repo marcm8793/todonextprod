@@ -15,7 +15,7 @@ function HomePage() {
         <Tooltip>
           <TooltipTrigger asChild>
             <Link className={buttonVariants()} href="/signIn">
-              NexToDo: Getting things done{" "}
+              NexToDo: Getting things done
             </Link>
           </TooltipTrigger>
           <TooltipContent>
