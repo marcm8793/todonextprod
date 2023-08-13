@@ -19,7 +19,7 @@ function HomePage() {
             </Link>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Let's go</p>
+            <p>Let&apos;s go</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
