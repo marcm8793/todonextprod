@@ -13,10 +13,6 @@ const Page = ({ params }) => {
   const [description, setDescription] = useState("");
   const router = useRouter();
 
-  useEffect(() => {
-    getData();
-  }, [id]);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -41,18 +37,20 @@ const Page = ({ params }) => {
     router.push("/");
   };
 
-  const getData = async () => {
-    const res = await fetch("/api/todo/" + id);
-    const json = await res.json();
+  useEffect(() => {
+    const getData = async () => {
+      const res = await fetch("/api/todo/" + id);
+      const json = await res.json();
 
-    if (!json) {
-      router.push("/404");
-      return;
-    }
-
-    setTitle(json.todo.title);
-    setDescription(json.todo.description);
-  };
+      if (!json) {
+        router.push("/404");
+        return;
+      }
+      setTitle(json.todo.title);
+      setDescription(json.todo.description);
+    };
+    getData();
+  }, []);
 
   const cancelBtn = () => {
     router.push("/");
