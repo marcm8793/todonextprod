@@ -50,7 +50,7 @@ const Page = ({ params }) => {
       setDescription(json.todo.description);
     };
     getData();
-  }, []);
+  }, [id, router]);
 
   const cancelBtn = () => {
     router.push("/");
