@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/tooltip";
 import Link from "next/link";
 
-function FloatingLogo() {
+function HomePage() {
   return (
     <div className="flex items-center justify-center h-60">
       <TooltipProvider>
@@ -27,4 +27,4 @@ function FloatingLogo() {
   );
 }
 
-export default FloatingLogo;
+export default HomePage;

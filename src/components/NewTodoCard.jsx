@@ -10,7 +10,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Edit, Trash } from "lucide-react";
 import useSWR, { mutate } from "swr";
-import AddtodoBtn from "@/components/AddtodoBtn";
+import AddtodoBtn from "@/components/AddTodoBtn";
 import React from "react";
 import Link from "next/link";
 
