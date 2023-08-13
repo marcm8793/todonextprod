@@ -7,10 +7,9 @@ import prisma from "@/lib/prisma";
 export async function GET(request, { params }) {
   const session = await getServerSession(authOptions);
   if (!session) {
-    return NextResponse.json("Not authorized");
+    return NextResponse.json({ error: "Not authorized" }, { status: 401 });
   }
   const { id } = params;
-
   const todo = await prisma.todo.findUnique({
     where: {
       id: id,

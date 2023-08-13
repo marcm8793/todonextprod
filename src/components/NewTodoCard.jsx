@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button.tsx";
 import {
   Card,
   CardContent,
@@ -10,7 +10,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Edit, Trash } from "lucide-react";
 import useSWR, { mutate } from "swr";
-import AddTodoBtn from "@/components/AddTodoBtn";
+import AddtodoBtn from "@/components/AddtodoBtn";
 import React from "react";
 import Link from "next/link";
 
@@ -29,7 +29,7 @@ const NewTodoCard = () => {
   return (
     <div className="container items-center justify-center ">
       <div className="p-5 flex items-center justify-center ">
-        <AddTodoBtn />
+        <AddtodoBtn />
       </div>
 
       <div className="grid grid-cols-1 gap-5 pb-4 md:grid-cols-2">

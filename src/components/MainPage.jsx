@@ -1,13 +1,12 @@
-"use client";
 import React from "react";
-import { signIn } from "next-auth/react";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button.tsx";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Link from "next/link";
 
 function FloatingLogo() {
   return (
@@ -15,12 +14,12 @@ function FloatingLogo() {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="" onClick={() => signIn()}>
+            <Link className={buttonVariants()} href="/signIn">
               NexToDo: Getting things done{" "}
-            </Button>
+            </Link>
           </TooltipTrigger>
           <TooltipContent>
-            <p>{`Let's go`}</p>
+            <p>Let's go</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

@@ -1,5 +1,5 @@
-import Navbar from "@/components/Navbar";
-import MainPage from "@/components/MainPage";
+import Nav from "@/components/Nav";
+import FloatingLogo from "@/components/FloatingLogo";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import NewTodoCard from "@/components/NewTodoCard";
@@ -9,15 +9,15 @@ export default async function Home() {
   if (session) {
     return (
       <div>
-        <Navbar />
+        <Nav />
         <NewTodoCard />
       </div>
     );
   }
   return (
     <div>
-      <Navbar />
-      <MainPage />
+      <Nav />
+      <FloatingLogo />
     </div>
   );
 }

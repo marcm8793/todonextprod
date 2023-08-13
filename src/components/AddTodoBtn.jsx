@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button.tsx";
 import { mutate } from "swr";
 import {
   Dialog,
@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
 
-function AddTodoBtn() {
+export default function AddtodoBtn() {
   const [todo, setTodo] = useState("");
   const [todoDescription, setTodoDescription] = useState("");
   const [open, setOpen] = useState(false);
@@ -82,5 +82,3 @@ function AddTodoBtn() {
     </div>
   );
 }
-
-export default AddTodoBtn;

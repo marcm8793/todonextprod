@@ -8,4 +8,8 @@ Prisma DB
 DB Supabase  
 Styled with shadcn  
 React Icons  
+Bcrypt  
+npm i --save-dev @types/bcrypt  
+zod  
+react-hook-form  
 :checkered_flag::checkered_flag:
