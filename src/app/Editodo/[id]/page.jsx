@@ -37,10 +37,6 @@ const Page = ({ params }) => {
     router.push("/");
   };
 
-  useEffect(() => {
-    getData();
-  }, []);
-
   const getData = async () => {
     const res = await fetch("/api/todo/" + id);
     const json = await res.json();
@@ -53,6 +49,10 @@ const Page = ({ params }) => {
     setTitle(json.todo.title);
     setDescription(json.todo.description);
   };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   const cancelBtn = () => {
     router.push("/");
