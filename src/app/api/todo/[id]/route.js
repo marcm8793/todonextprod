@@ -19,7 +19,7 @@ export async function GET(request, { params }) {
 }
 
 //! 2. UPDATE todo by id
-export async function UPDATE(request, { params }) {
+export async function PATCH(request, { params }) {
   const session = await getServerSession(authOptions);
   if (!session) {
     return NextResponse.json("Not authorized");
