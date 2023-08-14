@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
-import { hash } from "bcrypt";
 import * as z from "zod";
+import bcrypt from "bcrypt";
 
 //!Define a schema for input validation
 const userSchema = z.object({
@@ -42,7 +42,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const hashedPassword = await hash(password, 10);
+    const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = await prisma.user.create({
       data: {
         email,

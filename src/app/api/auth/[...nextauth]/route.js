@@ -4,7 +4,7 @@ import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import prisma from "@/lib/prisma";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { compare } from "bcrypt";
+import bcrypt from "bcrypt";
 
 export const authOptions = {
   pages: {
@@ -26,10 +26,6 @@ export const authOptions = {
     }),
     CredentialsProvider({
       name: "Credentials",
-      // `credentials` is used to generate a form on the sign in page.
-      // You can specify which fields should be submitted, by adding keys to the `credentials` object.
-      // e.g. domain, username, password, 2FA token, etc.
-      // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
         email: {
           label: "Email",
@@ -51,7 +47,7 @@ export const authOptions = {
           return null;
         }
 
-        const passwordMatch = await compare(
+        const passwordMatch = await bcrypt.compare(
           credentials.password,
           existingUser.password
         );
