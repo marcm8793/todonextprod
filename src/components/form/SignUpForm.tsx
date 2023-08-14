@@ -63,9 +63,6 @@ const SignUpForm = () => {
   const onSubmit = async (values: z.infer<typeof FormSchema>) => {
     const response = await fetch("/api/user", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
       body: JSON.stringify({
         name: values.username,
         email: values.Email,
@@ -82,6 +79,7 @@ const SignUpForm = () => {
       });
     }
   };
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
