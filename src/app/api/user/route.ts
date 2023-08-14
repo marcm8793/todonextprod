@@ -14,7 +14,7 @@ export async function POST(req: Request) {
       data: {
         email,
         name,
-        hashedPassword,
+        password: hashedPassword,
       },
     });
 
