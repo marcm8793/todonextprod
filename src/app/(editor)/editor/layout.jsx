@@ -1,7 +1,5 @@
 export default function EditorLayout({ children }) {
   return (
-    <div className="container mx-auto grid items-start gap-10 py-8">
-      {children}
-    </div>
+    <div className="container items-center justify-center">{children}</div>
   );
 }

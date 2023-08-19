@@ -64,7 +64,7 @@ export default function LoginBtn() {
                 })
               }
             >
-              <DropdownMenuItem>
+              <DropdownMenuItem className="w-auto">
                 <LogOut className="mr-2 h-4 w-4" />
                 <span>Log out</span>
               </DropdownMenuItem>

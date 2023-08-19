@@ -3,6 +3,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import prisma from "@/lib/prisma";
 import { Editor } from "@/components/notes/editor";
 import { getServerSession } from "next-auth/next";
+import { Footer } from "@/components/footer";
 
 async function getCurrentUser() {
   const session = await getServerSession(authOptions);
@@ -31,13 +32,16 @@ export default async function EditorPage({ params }) {
   }
 
   return (
-    <Editor
-      post={{
-        id: post.id,
-        title: post.title,
-        content: post.content,
-        published: post.published,
-      }}
-    />
+    <>
+      <Editor
+        post={{
+          id: post.id,
+          title: post.title,
+          content: post.content,
+          published: post.published,
+        }}
+      />
+      <Footer />
+    </>
   );
 }

@@ -102,6 +102,7 @@ export function Editor({ post }) {
     }
 
     router.refresh();
+    router.push("/notes");
 
     return toast({
       description: "Your post has been saved.",
@@ -114,9 +115,9 @@ export function Editor({ post }) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="grid w-full gap-10 container">
-        <div className="flex w-full items-center justify-between">
-          <div className="flex items-center space-x-10">
+      <div className="grid  gap-10 container pt-2 pb-2">
+        <div className="flex  items-center justify-between">
+          <div className="flex items-center justify-between ">
             <Link
               href="/notes"
               className={cn(buttonVariants({ variant: "ghost" }))}
@@ -130,8 +131,7 @@ export function Editor({ post }) {
               {post.published ? "Published" : "Draft"}
             </p>
           </div>
-        </div>
-        <div>
+
           <button type="submit" className={cn(buttonVariants())}>
             {isSaving && (
               <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
@@ -139,7 +139,8 @@ export function Editor({ post }) {
             <span>Save</span>
           </button>
         </div>
-        <div className="prose prose-stone mx-auto w-[800px] dark:prose-invert">
+
+        <div className="prose prose-stone dark:prose-invert">
           <TextareaAutosize
             autoFocus
             id="title"
