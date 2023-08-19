@@ -47,6 +47,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   todos         Todo[]
+  Post          Post[]
 }
 
 model Todo {
@@ -67,4 +68,18 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Post {
+  id        String   @id @default(cuid())
+  title     String
+  content   Json?
+  published Boolean  @default(false)
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @default(now()) @map(name: "updated_at")
+  authorId  String
+
+  author User @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  @@map(name: "posts")
 }

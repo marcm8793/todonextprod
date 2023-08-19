@@ -47,7 +47,7 @@ export default function AddtodoBtn() {
     <div>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button variant="">New Todo</Button>
+          <Button variant="">New Task</Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>

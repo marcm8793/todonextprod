@@ -28,7 +28,13 @@ const NewTodoCard = () => {
 
   return (
     <div className="container items-center justify-center ">
-      <div className="p-5 flex items-center justify-center ">
+      <div className="p-5 flex items-center justify-between ">
+        <div className="grid gap-1">
+          <h1 className="font-heading text-3xl md:text-4xl">Task</h1>
+          <p className="text-lg text-muted-foreground">
+            Create and manage tasks
+          </p>
+        </div>
         <AddtodoBtn />
       </div>
 
