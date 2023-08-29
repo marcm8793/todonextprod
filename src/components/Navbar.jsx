@@ -87,7 +87,10 @@ function Nav() {
           </Sheet>
         </div>
         <div className="space-x-3 flex items-center">
-          <Link href="https://github.com/marcm8793/todonextprod">
+          <Link
+            href="https://github.com/marcm8793/todonextprod"
+            target="_blank"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"

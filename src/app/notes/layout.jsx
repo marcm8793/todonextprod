@@ -23,8 +23,8 @@ export default async function DashboardLayout({ children }) {
         <div className="min-h-screen flex-col space-y-6 flex w-full flex-1 overflow-hidden container  gap-12  md:grid-cols-[200px_1fr]">
           {children}
         </div>
+        <Footer className="border-t" />
       </Provider>
-      <Footer className="border-t" />
     </>
   );
 }
