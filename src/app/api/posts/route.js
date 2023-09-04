@@ -17,7 +17,11 @@ export async function GET() {
       return new Response("Unauthorized", { status: 403 });
     }
 
-    const { user } = session;
+    const user = await prisma.user.findUnique({
+      where: {
+        email: session.user.email,
+      },
+    });
     const posts = await prisma.post.findMany({
       select: {
         id: true,
